@@ -52,7 +52,7 @@ public class BoardApiController {
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 	
-	@PostMapping  //add
+	@PostMapping  //add @ModelAttribute
 	public ResponseEntity<String> insertBoard(@ModelAttribute BoardDto board, MultipartHttpServletRequest multipartHttpServletRequest) throws Exception {
 		boardService.insertBoard(board, multipartHttpServletRequest);
 		return new ResponseEntity<String>("Success", HttpStatus.CREATED);
